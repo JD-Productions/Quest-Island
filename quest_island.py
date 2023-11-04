@@ -6,7 +6,7 @@ import database
 import tp
 
 def intinput(question=""):
-	answer = input(question)
+	answer = input(question).strip()
 	try:
 		int(answer)
 		return int(answer)
@@ -63,7 +63,7 @@ def work():
 		wage = random.randint(16, 36)
 	earned = 8 * wage
 	data['money'] += earned
-	print(f"You worked as a {data['job']} and got {earned} dollars. You now go home.")
+	print(f"\nYou worked as a {data['job']} and got {earned} dollars. You now go home.\n")
 	return
 
 def get_job():

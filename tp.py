@@ -40,6 +40,7 @@ class Trading_Post:
 					print(f"You bought {amount} loaves of bread for {self.data['money']} dollars.")
 				else:
 					print("You don't have enough money!")
+			return
 		if answer == 1:
 			sure = int(input("Buy 1 Cake?\n[0] Yes\n[1] No"))
 			if sure == 0:
@@ -50,6 +51,7 @@ class Trading_Post:
 					print("You bought 1 cake for 10 dollars.")
 				else:
 					print("You don't have enough money!")
+			return
 	
 	def weapons(self):
 		print("Sorry! This feature is unavailiable on the demo version.")

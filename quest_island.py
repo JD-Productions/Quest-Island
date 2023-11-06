@@ -22,12 +22,11 @@ db = database.Db(user)
 data = db.get_file()
 post = tp.Trading_Post(user)
 
-stats = """User: {user}
-Money: ${money}
-Job:   {job}""".format(user=db.user, money=data['money'], job=('None' if not data['job'] else data['job']))
-
 def main():
 	while True:
+		stats = """User: {user}
+Money: ${money}
+Job:   {job}""".format(user=db.user, money=data['money'], job=('None' if not data['job'] else data['job']))
 		print("\nStats:")
 		print(stats)
 		print("=============================")

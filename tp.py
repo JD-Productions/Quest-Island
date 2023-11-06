@@ -49,11 +49,13 @@ class Trading_Post:
                     db.add_item(f"Cake x1")
                     data['money'] -= cost
                     print("You bought 1 cake for 10 dollars.")
-	
+                else:
+                    print("You don't have enough money!")
+            return	
     def weapons(self):
         print("Sorry! This feature is unavailiable on the demo version.")
         return
-	
+
     def items(self):
         print("Sorry! This feature is unavailiable on the demo version.")
         return

@@ -11,6 +11,8 @@ def intinput(question=""):
         pass
 
 def get_users():
+    # TODO: remake this
+    # json_files = [pos_json for pos_json in os.listdir(path_to_json) if pos_json.endswith('.json')]
     with open('users.json', 'r') as f:
         users = json.load(f)
         users = users['users']

@@ -6,12 +6,12 @@ import database
 import tp
 
 def intinput(question=""):
-    answer = input(question)
-    try:
-        int(answer)
-        return int(answer)
-    except:
-        pass
+	answer = input(question).strip()
+	try:
+		int(answer)
+		return int(answer)
+	except:
+		pass
 
 print("""\n\n\n!!!!!!!!!!WARNING!!!!!!!!!!
 THIS IS A DEMO!\n\n\n""")

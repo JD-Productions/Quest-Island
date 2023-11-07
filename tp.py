@@ -79,6 +79,18 @@ class Trading_Post:
                 print("You bought a club")
             else:
                 print("You don't have enough money!")
+        if answer == 1:
+            sure = intinput("Buy Axe?\n[0] Yes\n[1] No\n")
+            if sure == 1:
+                return
+            cost = 50
+            if data["money"] >= cost:
+                db.add_item("Axe x1")
+                data["money"] -= cost
+                print("You bought an axe")
+            else:
+                print("You don't have enough money!")
+        return
 
     def items(self):
         print("Sorry! This feature is unavailiable on the demo version.")

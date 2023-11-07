@@ -2,7 +2,7 @@ import math
 import database
 
 def intinput(question=""):
-    answer = input(question)
+    answer = input(question).strip()
     try:
         answer = int(answer)
         return answer

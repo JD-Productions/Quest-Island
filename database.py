@@ -12,22 +12,15 @@ def intinput(question=""):
 
 def get_users():
     path = os.getcwd()
-    users = [json for json in os.listdir(path) if json.endswith('.json')]
+    users = [json_data for json_data in os.listdir(path) if json_data.endswith('.json')]
     for user in users:
         num = users.index(user)
-        users[num] = user.split(".")[0]
-    
-    #with open('users.json', 'r') as f:
-    #    users = json.load(f)
-    #    users = users['users']
-    
+        users[num] = user.split(".")[0] 
     return users
+
 def add_user(user):
     users = get_users()
     users.append(user)
-    #new = {'users': users}
-    #with open('users.json', 'w') as f:
-    #    json.dump(new, f)
 
 def _reset_user(user):
     setup = {

@@ -3,7 +3,7 @@
 
 Hello! This is the Quest Island Demo version! Thank you for testing this demo! I appreciate it very much.
 
-There *will* be bugs, so please let me know about them at [knapptime_wv@outlook.com][email]
+There *will* be bugs, so please let me know about them in the issues section.
 
 Game Rules:
 * You just got here, and only have five dollars. You can beg for money, then get a job. Once you have a job, you can work for money. 

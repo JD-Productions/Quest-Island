@@ -1,4 +1,4 @@
-import json
+import json, os
 
 __author__="Dalton"
 
@@ -11,19 +11,23 @@ def intinput(question=""):
         pass
 
 def get_users():
-    # TODO: remake this
-    # json_files = [pos_json for pos_json in os.listdir(path_to_json) if pos_json.endswith('.json')]
-    with open('users.json', 'r') as f:
-        users = json.load(f)
-        users = users['users']
+    path = os.getcwd()
+    users = [json for json in os.listdir(path) if json.endswith('.json')]
+    for user in users:
+        num = users.index(user)
+        users[num] = user.split(".")[0]
+    
+    #with open('users.json', 'r') as f:
+    #    users = json.load(f)
+    #    users = users['users']
+    
     return users
-
 def add_user(user):
     users = get_users()
     users.append(user)
-    new = {'users': users}
-    with open('users.json', 'w') as f:
-        json.dump(new, f)
+    #new = {'users': users}
+    #with open('users.json', 'w') as f:
+    #    json.dump(new, f)
 
 def _reset_user(user):
     setup = {

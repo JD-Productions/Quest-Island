@@ -39,10 +39,10 @@ Job:   {job}""".format(user=db.user, money=data['money'], job=('None' if not dat
             print("[2] Get a job")
         else:
             print("[2] Job Stars") #TODO: Create Function and Logic.
-								print("[3] Quit")
+        print("[3] Quit")
         answer = intinput()
-								if answer == 3:
-									quit()
+        if answer == 3:
+            quit()
         if answer == 1:
             post.main()
         if answer == 2 and not data['job']:

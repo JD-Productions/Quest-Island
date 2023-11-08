@@ -32,6 +32,14 @@ def _reset_user(user):
         json.dump(setup, file)
         print(f"USER {user.upper()} HAS BEEN RESET")
 
+def dialogue(name=""):
+    path = os.getcwd() + "/Dialogue"
+    names = [name for name in os.listdir(path) if name.endswith('.txt')]
+    if name not in names:
+        raise ValueError()
+    with open(f"{name}.txt", "r") as file:
+        print(file)
+
 class Db:
     def __init__(self, user):
         self.user = user

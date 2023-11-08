@@ -33,11 +33,12 @@ def _reset_user(user):
         print(f"USER {user.upper()} HAS BEEN RESET")
 
 def dialogue(name=""):
+    name += ".txt"
     path = os.getcwd() + "/Dialogue"
     names = [name for name in os.listdir(path) if name.endswith('.txt')]
     if name not in names:
         raise ValueError()
-    with open(f"{name}.txt", "r") as file:
+    with open(name, "r") as file:
         print(file)
 
 class Db:

@@ -1,0 +1,16 @@
+Welcome to Quest Island, weary traveler!
+I am here to help you along your journey. First though, you need to rest...
+
+--------------------------------------
+The Next Morning...
+
+Good Morning!
+I heard rumor you came here from a faraway land. You were banned from your city, for...something? Anyway, you need money to get food. You could hunt, but you don't have any materials. The only other way is to beg for money. There is a spot near the trading post where you can do so. However, you look starving. Here, take a loaf of bread I got for you.
+
+* Aquired 1x bread
+
+Once you take the bread, you tear off a piece and shove it in your mouth. Mmm, you haven't had bread in quite a while!
+
+* Eaten 1x bread
+
+There. You look better. Now, you should go get some money.

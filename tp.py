@@ -53,7 +53,7 @@ class Trading_Post:
                 print("You don't have enough money!")
         if answer == 1:
             sure = intinput("Buy 1 Cake?\n[0] Yes\n[1] No")
-            if sure == 1;
+            if sure == 1:
                 return
             cost = 10
             if data['money'] >= cost:

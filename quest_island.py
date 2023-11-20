@@ -19,8 +19,8 @@ THIS IS A DEMO!\n\n\n""")
 print("\n\n\nWelcome To Quest Island!")
 user = database.choose_user()
 db = database.Db(user)
-data = db.get_file()
 post = tp.Trading_Post(user)
+data = db.get_file()
 def main():
     while True:
         stats = """User: {user}
@@ -43,10 +43,12 @@ Job:   {job}""".format(user=db.user, money=data['money'], job=('None' if not dat
         answer = intinput()
         if answer == 3:
             quit()
-        if answer == 1:
+        elif answer == 1:
             post.main()
-        if answer == 2 and not data['job']:
+        elif answer == 2 and not data['job']:
             get_job()
+        elif answer == 0 and data['job']:
+            work()
         db.save_file(data)
 
 def beg():

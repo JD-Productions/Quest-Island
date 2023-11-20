@@ -14,10 +14,10 @@ class Trading_Post:
     def __init__(self, user):
         self.db = database.Db(user)
         self.data = self.db.get_file()
-
     def main(self):
         print("Welcome To The Trading Post!", end=" ")
         while True:
+            print(f"inventory {self.data['inventory']}")
             print("How can I help you?")
             print("[0] Food\n[1] Weapons\n[2] Items\n[3] Leave")
             answer = intinput()
@@ -30,8 +30,6 @@ class Trading_Post:
             if answer == 3:
                 print("Thanks for shopping by! Come back soon!")
                 break
-            self.db.save_file(self.data)
-
     def food(self):
         db = self.db
         data = self.data
@@ -46,7 +44,7 @@ class Trading_Post:
             amount = intinput("How many loaves? (Number)  ")
             cost = amount * 5
             if data['money'] >= cost:
-                db.add_item(f"bread x{amount}")
+                db.add_item(['bread',amount])
                 print(f"* Acquired {amount}x Bread")
                 data['money'] -= cost
             else:

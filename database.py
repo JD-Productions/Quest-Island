@@ -48,7 +48,7 @@ class Db:
             add_user(user)
         self.setup = {
         "money": 5,
-        "inventory": [],
+        "inventory": {},
         "job": None
         }
         self.create_save_file()
@@ -69,16 +69,18 @@ class Db:
             save = json.load(file)
             return save
     
-    def save_file(self, file):
+    def save_file(self, save):
         with open(f"{self.user}.json", "w") as f:
-            json.dump(file, f)
+            json.dump(save, f)
     
     def add_item(self, item):
-        with open(f"{self.user}.json") as file:
-            save = json.load(file)
-            save['inventory'].append(item)
-            self.save_file(save)
-    
+        save = self.get_file()
+        if save["inventory"].get(item[0]):
+             save["inventory"][item[0]] += item[1]
+        else:
+            save["inventory"][item[0]] = item[1]
+        print(f"add {save}")
+        self.save_file(save) 
     def remove_item(self, item):
         with open(f"{self.user}.json") as file:
             save = json.load(file)

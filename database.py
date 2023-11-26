@@ -1,7 +1,5 @@
 import json, os
 
-__author__="Dalton"
-
 def intinput(question=""):
     answer = input(question)
     try:

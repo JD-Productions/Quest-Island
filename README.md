@@ -3,6 +3,8 @@
 
 Hello! This is the Quest Island Demo version! Thank you for testing this demo! I appreciate it very much.
 
+![Catstello](https://octodex.github.com/images/catstello.png)
+
 There *will* be bugs, so please let me know about them in the issues section.
 
 Game Rules:

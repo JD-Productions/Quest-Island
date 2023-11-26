@@ -9,7 +9,7 @@ def intinput(question=""):
         pass
 
 def get_users():
-    path = os.getcwd()
+    path = os.getcwd() + "/Users"
     users = [json_data for json_data in os.listdir(path) if json_data.endswith('.json')]
     for user in users:
         num = users.index(user)
@@ -26,7 +26,7 @@ def _reset_user(user):
     "inventory": [],
     "job": None
     }
-    with open(f"{user}.json", "w") as file:
+    with open(f"Users/{user}.json", "w") as file:
         json.dump(setup, file)
         print(f"USER {user.upper()} HAS BEEN RESET")
 
@@ -49,26 +49,27 @@ class Db:
         "inventory": {},
         "job": None
         }
+        self.path = f"Users/{self.user}.json"
         self.create_save_file()
 
     def create_save_file(self, overwrite=False):
         try:
-            with open(f"{self.user}.json", "x") as file:
+            with open(self.path, "x") as file:
                 json.dump(self.setup, file)
         except FileExistsError:
             if overwrite:
-                with open(f"{self.user}.json", "w") as file:
+                with open(self.path, "w") as file:
                     json.dump(self.setup, file)
             else:
                 pass
     
     def get_file(self):
-        with open(f"{self.user}.json", "r") as file:
+        with open(self.path, "r") as file:
             save = json.load(file)
             return save
     
     def save_file(self, save):
-        with open(f"{self.user}.json", "w") as f:
+        with open(self.path, "w") as f:
             json.dump(save, f)
     
     def add_item(self, item):

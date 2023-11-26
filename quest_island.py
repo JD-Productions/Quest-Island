@@ -70,8 +70,16 @@ def work():
     return
 
 def get_job():
-    print("Sorry! This feature is unavailiable on the demo version.")
-    return
+        print("[0] Blacksmith")
+        print("[1] Carpenter")
+        answer = intinput()
+        if answer == 0:
+            data["job"] = "Blacksmith"
+            print("your job is now Blacksmith")
+        elif answer == 1:
+            data["job"] = "Carpenter"
+            print("your job is now Carpenter")
+        return
 
 if __name__=='__main__':
     main()

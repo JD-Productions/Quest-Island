@@ -49,10 +49,14 @@ Job:   {job}""".format(user=db.user, money=data['money'], job=('None' if not dat
             get_job()
         elif answer == 0 and data['job']:
             work()
-        db.save_file(data)
+        elif answer == 0 and not data['job']:
+            beg()
 
 def beg():
-    print("Sorry! This feature is unavailiable on the demo version.")
+    money = random.randint(0,5)
+    data['money'] += money
+    db.save_file(data)
+    print(f"you got {money} from begging")
     return
 
 def work():
@@ -66,6 +70,7 @@ def work():
         wage = random.randint(16, 36)
     earned = 8 * wage
     data['money'] += earned
+    db.save_file(data)
     print(f"You worked as a {data['job']} and got {earned} dollars. You now go home.")
     return
 

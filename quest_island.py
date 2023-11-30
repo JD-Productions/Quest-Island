@@ -51,12 +51,13 @@ Job:   {job}""".format(user=db.user, money=data['money'], job=('None' if not dat
             work()
         elif answer == 0 and not data['job']:
             beg()
+	db.save_file(data)
 
 def beg():
     money = random.randint(0,5)
     data['money'] += money
     db.save_file(data)
-    print(f"you got {money} from begging")
+    print(f"You got {money} from begging")
     return
 
 def work():
@@ -80,7 +81,7 @@ def get_job():
         answer = intinput()
         if answer == 0:
             data["job"] = "Blacksmith"
-            print("your job is now Blacksmith")
+            print("Your job is now Blacksmith")
         elif answer == 1:
             data["job"] = "Carpenter"
             print("your job is now Carpenter")

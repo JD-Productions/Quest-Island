@@ -16,6 +16,15 @@ def get_users():
         users[num] = user.split(".")[0] 
     return users
 
+def get_dialogue(character=str, num=int):
+    print()
+    path = os.getcwd() + f"/Dialogue/Characters/{character}"
+    dialogue = [data for data in os.listdir(path) if data.endswith('.txt')]
+    for d in dialogue:
+        with open(d, "r"):
+            dialogues.append(d.read())
+    d = dialogues[num]
+
 def add_user(user):
     users = get_users()
     users.append(user)
